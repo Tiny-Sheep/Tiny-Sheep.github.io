@@ -164,12 +164,6 @@ dfn {
  * contexts in Firefox 4+, Safari, and Chrome.
  */
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-
 /**
  * Address styling not present in IE 8/9.
  */
@@ -558,7 +552,7 @@ body {
   font-style: italic;
   font-weight: 400;
   color: #423B35;
-  text-align: left;
+  text-align: center;
   font-size: 36px;
 }
 
@@ -751,5 +745,61 @@ body {
 .zelle {
   height: auto;
   width: 100%;
+}
+
+.container-prog {
+	 width: 100%;
+	 max-width: 14rem;
+	 display: flex;
+	 flex-direction: column;
+	 gap: 0.5rem;
+	 font-weight: 500;
+}
+ .label {
+	 display: flex;
+	 gap: 0.5rem;
+	 justify-content: space-between;
+}
+ .progress {
+	 height: 10px;
+	 width: calc(100% - 8px);
+	 position: relative;
+	 border: solid 4px #000851;
+	 border-radius: 50px;
+	 background: #000851;
+	 overflow: hidden;
+}
+ .progress > span {
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 height: inherit;
+	 animation: progress 2s cubic-bezier(0.23, 1, 0.32, 1);
+	 animation-fill-mode: forwards;
+	 width: var(--progress);
+	 background: blue;
+	 background: linear-gradient(90deg, #000851 0%, #4fffb0 100%);
+	 border-radius: inherit;
+}
+ .progress > span:after {
+	 content: "";
+	 display: block;
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 height: 10px;
+	 width: 10px;
+	 z-index: 1;
+	 border-radius: 100%;
+	 background: white;
+	 box-shadow: 0px 0px 10px #000851;
+}
+ @keyframes progress {
+	 from {
+		 width: 0;
+	}
+	 to {
+		 width: var(--progress);
+	}
 }
 
